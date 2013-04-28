@@ -1,0 +1,255 @@
+@import 'reset.css';
+
+/**
+ * Global
+ */
+body {
+  width: 100%;
+  *zoom: 1;
+}
+body:before, body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+body {
+  font: 14px/1.4 'Open Sans', Geneva, sans-serif;
+  background: #333 url('../images/bg.jpg') fixed -100px -150px;
+  color: #ddd;
+}
+
+#container {
+}
+
+::selection {
+  background-color: #eee;
+  color: #000;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: #ddd;
+}
+a:hover {
+  color: #fff;
+}
+
+strong {
+  font-weight: 700;
+}
+em {
+/*  background-color: #333;*/
+/*  padding: .25em .5em;*/
+  color: #eee;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+h2 {
+  font-size: 1.25em;
+}
+h3 {
+  font-size: 1.1em;
+}
+
+hr {
+  color: #333;
+  background-color: #333;
+  height: 1px;
+  border: 0;
+}
+
+/**
+ * Header
+ */
+header {
+/*  position: fixed;*/
+  top: .4em;
+  left: 0;
+  z-index: 20;
+}
+header strong {
+  color: #fff;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+  display: block;
+  float: left;
+  padding-left: .25em;
+  width: 2.75em;
+/*  background-color: #fff;*/
+}
+header h1 {
+  font-family: 'Open Sans', Geneva, sans-serif;
+  font-weight: 800;
+  position: fixed;
+  top: 5.5em;
+  left: -2.3em;
+  letter-spacing: -1px;
+  font-size: 3em;
+  color: #ddd;
+  text-shadow: .1em .1em .1em #000;
+  opacity: .2;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+#strip {
+  border-top: .4em solid #ffcc00;
+  height: 4em;
+  width: 100%;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  opacity: .85;
+}
+/**
+ * Sidebar
+ */
+#sidebar {
+  position: relative;
+  height: 4em;
+  width: 59em;
+  position: fixed;
+  top: .4em;
+  z-index: 10;
+}
+
+#container {
+  width: 62em;
+  margin: 0 auto;
+  position: relative;
+}
+#sidebar nav {
+  position: absolute;
+  left: 6em;
+  min-width: 52em;
+}
+#sidebar nav ul {
+  list-style-type: none;
+  margin: 0 auto;
+}
+#sidebar nav ul li {
+  display: block;
+  float: left;
+}
+#sidebar nav ul li a {
+/*  text-shadow: .1em .1em .1em #000;*/
+  text-transform: lowercase;
+  display: block;
+  text-align: center;
+  width: 5.25em;
+  height: 1.7em;
+  color: #999;
+  padding: 1.2em .8em .7em .8em;
+/*  margin-top: -.8em;*/
+  border-bottom: .5em solid transparent;
+  font-size: 1.1em;
+}
+#sidebar nav ul li a:hover,
+#sidebar nav ul li a:focus {
+  background-color: #191919;
+}
+#sidebar nav ul li.active a {
+  background-color: #111;
+  color: #fff;
+}
+
+#sidebar nav ul li.projekcje a {
+  border-color: #ffcc00;
+}
+#sidebar nav ul li.zajecia a {
+  border-color: #fb7b13;
+}
+#sidebar nav ul li.warsztaty a {
+  border-color: #b8ce05;
+}
+#sidebar nav ul li.kup-film a {
+  border-color: #aa4700;
+}
+#sidebar nav ul li.wsparcie a {
+  border-color: #ddd;
+}
+#sidebar nav ul li.kontakt a {
+  border-color: #353d0f;
+}
+#sidebar nav ul li.polecamy a {
+  border-color: #8b801a;
+}
+
+/**
+ * Content
+ */
+#content {
+  min-height: 17em;
+  background-color: #222;
+  padding: 2em 3em 1em 3em;
+  margin: 7.3em 0 0 6em;
+  width: 46.7em;
+  color: #aaa;
+  border-radius: 1em 1em 0 0;
+  opacity: .85;
+}
+#content h1 {
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid #333;
+}
+#content h2 {
+  margin: 1em 0;
+/*  padding-bottom: .25em;*/
+/*  border-bottom: 1px solid #333;*/
+}
+#content a:hover {
+  border-bottom: .2em solid #444;
+}
+#content ul {
+  list-style-type: circle;
+}
+#content li {
+  margin: .5em 0;
+}
+#content p {
+  margin: 1em 0;
+}
+
+/**
+ * Footer
+ */
+footer {
+  font-family: 'Open Sans', Geneva, sans-serif;
+  border-top: 1px solid #333;
+  width: 46.7em;
+  padding: 1em 3em;
+  margin: 0 0 2em 6em;
+  background-color: #1c1b1b;
+  border-radius: 0 0 1em 1em;
+  color: #333;
+  opacity: .85;
+}
+footer a, footer em {
+  color: #666;
+}
+footer .copy {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+  display: inline-block;
+}
+footer .secondary {
+  float: right;
+}

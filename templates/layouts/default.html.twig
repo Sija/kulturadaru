@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ page.meta.description | replace("\n", " ") }}">
+  <meta name="author" content="Sijawusz Pur Rahnama">
+  <title>{{ page.name }} — {% block title page.title %}</title>
+
+  {% block stylesheets %}
+    <link href="{{ 'stylesheets/screen.css'|public_path }}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800&amp;subset=latin,latin-ext" rel="stylesheet">
+  {% endblock %}
+  {% block javascripts %}
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- <script src="{{ 'javascripts/jquery-1.7.2.min.js'|public_path }}"></script> -->
+  {% endblock %}
+</head>
+
+<body class="page-{{ page.slug }}">
+  <div id="strip"></div>
+  <div id="container">
+      <div id="x">
+    {% block sidebar %}
+      <div id="sidebar">
+        <header>
+          <a href="{{ page.parents[0].url }}">
+            <strong>●●●</strong>
+          </a>
+          <!-- <h1>{{ page.name }}</h1> -->
+        </header>
+        <nav>
+          <ul>
+            {% for child in page.root %}
+              <li class="{{ child.slug }} {{ child.isCurrent ? 'active' : '' }}">
+                <a href="{{ child.url }}">{{ child.menu_title ? child.menu_title : child.slug }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    {% endblock %}
+    {% block content %}
+      <div id="content">
+        <article>
+          <h1>{{ page.title }}</h1>
+          <div class="body">
+            {{ page.content | markdown }}
+          </div>
+        </article>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      <footer>
+        <a href="https://github.com/thegiftculture/website">
+          <span class="copy">&copy;</span>
+        </a>
+        {{ date().format('Y') }} Kultura Daru
+        <span class="secondary">
+          powered by <em>❤</em> &amp;
+          <a href="http://gizmocms.com/">Gizmo</a>!
+        </span>
+      </footer>
+    {% endblock %}
+  </div>
+  </div>
+  {% include "shared/_analytics.html.twig" %}
+  {% block scripts null %}
+</body>
+</html>

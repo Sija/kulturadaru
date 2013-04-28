@@ -1,0 +1,16 @@
+{
+    "authors": [
+        {
+            "name":     "Sijawusz Pur Rahnama",
+            "email":    "sija@sija.pl",
+            "homepage": "http://sija.pl/"
+        }
+    ],
+    "config": {
+        "process-timeout": 600
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "gizmo/gizmo": "dev-master"
+    }
+}
